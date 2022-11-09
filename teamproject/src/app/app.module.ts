@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ButtonComponent } from './components/button/button.component';
 import { HeaderComponent } from './components/header/header.component';
+import { ContentComponent } from './components/content/content.component';
 import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
@@ -18,6 +19,7 @@ import { FooterComponent } from './components/footer/footer.component';
     NavbarComponent,
     ButtonComponent,
     HeaderComponent,
+    ContentComponent,
     FooterComponent
   ],
   imports: [
