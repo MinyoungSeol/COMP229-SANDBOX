@@ -28,17 +28,26 @@
 .infoDiv{
 
 }
-.button_div{
+.buttonDiv{
     
 }
 
 .edit{
     color: white;
     background-color: #84B027;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    margin:10px;
+    border-radius: 20px;
 }
 
 .delete{
     color: white;
     background-color: #DB2222;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 20px;
 }
 
