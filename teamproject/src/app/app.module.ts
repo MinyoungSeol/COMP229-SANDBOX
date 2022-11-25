@@ -12,6 +12,7 @@ import { ButtonComponent } from './components/button/button.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ContentComponent } from './components/content/content.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { IncidentComponent } from './components/incident/incident.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FooterComponent } from './components/footer/footer.component';
     ButtonComponent,
     HeaderComponent,
     ContentComponent,
-    FooterComponent
+    FooterComponent,
+    IncidentComponent
   ],
   imports: [
     BrowserModule,
