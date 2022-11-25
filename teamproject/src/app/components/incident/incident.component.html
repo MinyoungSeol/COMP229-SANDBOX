@@ -1,0 +1,27 @@
+<div class="incident_item" *ngFor="let Incident of incidents">
+
+    <!-- Informaion divs -->
+    <div class="infoDiv">
+        <div class="up">
+            <span>Incident Case No</span>
+            <span>Case Category</span>
+            <span>Created</span>
+            <span>Updated</span>
+            <span>Status</span>
+        </div>
+        <div class="down">
+            <span>{{ Incident.caseNo }}</span>
+            <span>{{ Incident.category }}</span>
+            <span>{{ Incident.created }}</span>
+            <span>{{ Incident.updated }}</span>
+            <span>{{ Incident.status }}</span>
+        </div>
+    </div>
+
+    <!-- button div -->
+    <div class="buttonDiv">
+        <button class="edit">Edit</button>
+        <button class="delete">Delete</button>
+    </div>
+
+</div>
