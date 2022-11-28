@@ -12,7 +12,7 @@ export class IncidentsService {
 
   constructor(private http: HttpClient) { }
 
-  getTasks(): Observable<Incident[]> {
+  getIncidents(): Observable<Incident[]> {
     return this.http.get<Incident[]>(this.url);
   }
 }
