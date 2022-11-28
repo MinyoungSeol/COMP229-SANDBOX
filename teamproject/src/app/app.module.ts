@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -14,6 +15,9 @@ import { HeaderComponent } from './components/header/header.component';
 import { ContentComponent } from './components/content/content.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { IncidentComponent } from './components/incident/incident.component';
+import { AuthComponent } from './admin/auth/auth.component';
+import { LoginComponent } from './admin/login/login.component';
+import { RegisterComponent } from './admin/register/register.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +27,10 @@ import { IncidentComponent } from './components/incident/incident.component';
     HeaderComponent,
     ContentComponent,
     FooterComponent,
-    IncidentComponent
+    IncidentComponent,
+    AuthComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +38,8 @@ import { IncidentComponent } from './components/incident/incident.component';
     BrowserAnimationsModule,
     HttpClientModule,
     MatToolbarModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
