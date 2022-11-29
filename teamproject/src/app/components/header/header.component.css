@@ -1,4 +1,7 @@
 .header {
     text-align: center;
-    margin: 20px;
+    width:1000px;
+    margin:auto;
+    margin-top: 60px;
+    padding:16px;
 }
