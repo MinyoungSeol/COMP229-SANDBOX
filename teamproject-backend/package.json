@@ -5,15 +5,17 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "startApp" : "nodemon server.js",
-    "start" : "node server.js"
+    "startApp": "nodemon server.js",
+    "start": "node server.js"
   },
   "author": "Team SandBox",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.1",
     "compression": "^1.7.4",
+    "connect-mongo": "^4.6.0",
     "cors": "^2.8.5",
+    "crypto": "^1.0.1",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-session": "^1.17.3",

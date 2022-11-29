@@ -28,19 +28,19 @@ export class RegisterComponent implements OnInit {
   }
 
   register() {
-    this.user = {
-      username: this.username,
-      password: this.password,
-      email: this.email,
-      displayName: this.displayName
-    }
+    // this.user = {
+    //   username: this.username,
+    //   password: this.password,
+    //   email: this.email,
+    //   displayName: this.displayName
+    // }
     
-    this.authService.registerUser(this.user).subscribe(() => {
-      console.log(`user registration success: ${ this.user }`)
+    // this.authService.registerUser(this.user).subscribe(() => {
+    //   console.log(`user registration success: ${ this.user }`)
       this.router.navigate(['login'])
-    }, (error) => {
-      console.log(`Error: ${ error }`)
-    })
+    // }, (error) => {
+    //   console.log(`Error: ${ error }`)
+    // })
   }
 
 }

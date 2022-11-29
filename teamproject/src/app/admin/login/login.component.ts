@@ -29,6 +29,10 @@ export class LoginComponent implements OnInit {
     })
   }
 
+  register(){
+    this.router.navigate(['register'])
+  }
+
   getUserInfo() {
     this.authService.getUserInfo().subscribe((user) => this.user = user)
   }
