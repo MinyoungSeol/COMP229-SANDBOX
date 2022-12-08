@@ -1,0 +1,37 @@
+<h1 mat-dialog-title>Add Incidnet Form</h1>
+<div mat-dialog-content>
+    <form [formGroup]="incidentForm">
+        <mat-form-field appearance="outline">
+            <mat-label>Case Number</mat-label>
+            <input formControlName="caseNo" matInput placeholder="number" />
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Case Category</mat-label>
+            <input formControlName="category" matInput placeholder="category" />
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Created</mat-label>
+            <input formControlName="created" matInput [matDatepicker]="picker" />
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Updated</mat-label>
+            <input formControlName="updated" matInput [matDatepicker]="picker1" />
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Status</mat-label>
+            <mat-select formControlName="status" placeholder="status">
+                <mat-option value="completed">Completed</mat-option>
+                <mat-option value="in progress">In Progress</mat-option>
+                <mat-option value="submitted">Submitted</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </form>
+</div>
+<div mat-dialog-action [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+    <button style="margin-left: 8px;" mat-raised-button color="primary" (click)="addIncident()">Save</button>
+</div>
