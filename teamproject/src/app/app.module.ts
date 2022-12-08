@@ -26,7 +26,7 @@ import { IncidentComponent } from './components/incident/incident.component';
 import { AuthComponent } from './admin/auth/auth.component';
 import { LoginComponent } from './admin/login/login.component';
 import { RegisterComponent } from './admin/register/register.component';
-import { DialogComponent } from './dialog/dialog.component';
+import { DialogComponent } from './components/dialog/dialog.component';
 
 
 @NgModule({
