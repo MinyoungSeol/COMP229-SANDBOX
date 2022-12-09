@@ -5,6 +5,7 @@ import { Incident } from 'src/app/model/Incident';
 import { outputAst } from '@angular/compiler';
 import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/testing';
 import { DatePipe } from '@angular/common'
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-dialog',
@@ -25,7 +26,7 @@ export class DialogComponent implements OnInit {
   incidents: Incident[] = []
   incidentForm!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private api: IncidentsService, private datePipe: DatePipe) { }
+  constructor(private formBuilder: FormBuilder, private api: IncidentsService, private datePipe: DatePipe, private dialogRef: MatDialogRef<DialogComponent>) { }
 
   ngOnInit(): void {
 
@@ -72,6 +73,10 @@ export class DialogComponent implements OnInit {
       this.incidents.push(incident)
       //this.api.postIncident(this.incidentForm.value)
       console.log(`API call to /api/add returned `)
+      alert("New Record Created!")
+      this.incidentForm.reset();
+      this.dialogRef.close();
+      window.location.reload();
     }, (error) => {
       console.log(`Error: ${ error }`)
     })
