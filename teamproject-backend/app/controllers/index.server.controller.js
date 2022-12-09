@@ -49,3 +49,26 @@ exports.addIncident = (req, res) => {
         return res.status(502).json({ error: error, msg: 'Error inside Catch'})
     }
 }
+
+exports.deleteIncident = (req, res) => {
+
+    try {
+
+        Incident.findOneAndDelete({ caseNo: req.params.caseNo }, (err, incident) => {
+            if (err) {
+                res.json(err)
+                return next(err)
+            } else {
+                console.log('Tried rendering from deleteTask');
+                return res.json(`Sucessfully Deleted ${ req.params.text }`)
+            }
+        })
+
+    } catch {
+
+        res.json(error)
+        next(error)
+
+    }
+
+}

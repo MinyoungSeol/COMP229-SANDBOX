@@ -21,11 +21,11 @@ export class ButtonComponent implements OnInit {
   @Input() incident!:Incident
   // @Output() onAddIncident: EventEmitter<Incident> = new EventEmitter()
 
-  caseNo: number = 0
-  category: string = ''
-  created: string = ''
-  updated: string = ''
-  status: string = ''
+  // caseNo: number = 0
+  // category: string = ''
+  // created: Date = ''
+  // updated: Date = ''
+  // status: string = ''
 
   incidents: Incident[] = []
   
@@ -46,21 +46,21 @@ export class ButtonComponent implements OnInit {
   }
 
   onSubmit(){
-    const newIncident = {
-      caseNo: this.caseNo,
-      category: this.category,
-      created: this.created,
-      updated: this.updated,
-      status: this.status
-    }
+    // const newIncident = {
+    //   caseNo: this.caseNo,
+    //   category: this.category,
+    //   created: this.created,
+    //   updated: this.updated,
+    //   status: this.status
+    // }
 
-    this.onAddIncident.emit(newIncident)
+    // this.onAddIncident.emit(newIncident)
 
-    this.caseNo = 0
-    this.category = ''
-    this.created = ''
-    this.updated = ''
-    this.status = ''  
+    // this.caseNo = 0
+    // this.category = ''
+    // this.created = ''
+    // this.updated = ''
+    // this.status = ''  
   }
 
   // onSubmit(){
