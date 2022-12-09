@@ -28,6 +28,8 @@ import { LoginComponent } from './admin/login/login.component';
 import { RegisterComponent } from './admin/register/register.component';
 import { DialogComponent } from './components/dialog/dialog.component';
 
+import { DatePipe } from '@angular/common'
+
 
 @NgModule({
   declarations: [
@@ -59,7 +61,9 @@ import { DialogComponent } from './components/dialog/dialog.component';
     MatDatepickerModule,
     MatNativeDateModule
   ],
-  providers: [],
+  providers: [
+    DatePipe
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

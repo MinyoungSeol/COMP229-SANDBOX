@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { IncidentsService } from './incidents.service';
+import { IncidentsService } from './api-incidents.service';
 
 describe('IncidentsService', () => {
   let service: IncidentsService;

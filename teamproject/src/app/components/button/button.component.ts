@@ -1,6 +1,9 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { DialogComponent } from '../dialog/dialog.component';
+import { Incident } from 'src/app/model/Incident';
+import { Subscription } from 'rxjs';
+
 
 @Component({
   selector: 'app-button',
@@ -14,6 +17,18 @@ export class ButtonComponent implements OnInit {
   @Input() padding: string = ''
   @Input() margin: string = ''
   @Output() btnClick = new EventEmitter()
+  @Output() onAddIncident: EventEmitter<Incident> = new EventEmitter()
+  @Input() incident!:Incident
+  // @Output() onAddIncident: EventEmitter<Incident> = new EventEmitter()
+
+  // caseNo: number = 0
+  // category: string = ''
+  // created: Date = ''
+  // updated: Date = ''
+  // status: string = ''
+
+  incidents: Incident[] = []
+  
 
   constructor(private dialog: MatDialog) { }
 
@@ -30,4 +45,41 @@ export class ButtonComponent implements OnInit {
     });
   }
 
+  onSubmit(){
+    // const newIncident = {
+    //   caseNo: this.caseNo,
+    //   category: this.category,
+    //   created: this.created,
+    //   updated: this.updated,
+    //   status: this.status
+    // }
+
+    // this.onAddIncident.emit(newIncident)
+
+    // this.caseNo = 0
+    // this.category = ''
+    // this.created = ''
+    // this.updated = ''
+    // this.status = ''  
+  }
+
+  // onSubmit(){
+  //   const newIncident = {
+  //     caseNo: this.caseNo,
+  //     category: this.category,
+  //     created: this.created,
+  //     updated: this.updated,
+  //     status: this.status
+  //   }
+
+  //   this.onAddIncident.emit(newIncident)
+
+  //   this.caseNo = 0
+  //   this.category = ''
+  //   this.created = ''
+  //   this.updated = ''
+  //   this.status = ''  
+  // }
+
 }
+

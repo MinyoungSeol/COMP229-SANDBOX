@@ -1,37 +1,49 @@
 <h1 mat-dialog-title>Add Incidnet Form</h1>
 <div mat-dialog-content>
-    <form [formGroup]="incidentForm">
+
+    <form [formGroup]="incidentForm" (ngSubmit)="addIncident(incident)">
+
         <mat-form-field appearance="outline">
             <mat-label>Case Number</mat-label>
-            <input formControlName="caseNo" matInput placeholder="number" />
+            <input type="number" name="caseNo" id="caseNo" formControlName="caseNo" matInput placeholder="number" />
         </mat-form-field>
+
         <mat-form-field appearance="outline">
             <mat-label>Case Category</mat-label>
-            <input formControlName="category" matInput placeholder="category" />
+            <input type="text" name="category" id="category" formControlName="category" matInput placeholder="category" />
         </mat-form-field>
+
         <mat-form-field appearance="outline">
             <mat-label>Created</mat-label>
-            <input formControlName="created" matInput [matDatepicker]="picker" />
+            <input type="text" name="created" id="created" formControlName="created" matInput [matDatepicker]="picker" />
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
+
         <mat-form-field appearance="outline">
             <mat-label>Updated</mat-label>
-            <input formControlName="updated" matInput [matDatepicker]="picker1" />
+            <input type="text" name="updated" id="updated" formControlName="updated" matInput [matDatepicker]="picker1" />
             <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
             <mat-datepicker #picker1></mat-datepicker>
         </mat-form-field>
+
         <mat-form-field appearance="outline">
             <mat-label>Status</mat-label>
-            <mat-select formControlName="status" placeholder="status">
-                <mat-option value="completed">Completed</mat-option>
-                <mat-option value="in progress">In Progress</mat-option>
-                <mat-option value="submitted">Submitted</mat-option>
+            <mat-select name="status" id="status" formControlName="status" placeholder="status">
+                <mat-option value="Completed">Completed</mat-option>
+                <mat-option value="In Progress">In Progress</mat-option>
+                <mat-option value="Submitted">Submitted</mat-option>
             </mat-select>
         </mat-form-field>
+
+        <div mat-dialog-action [align]="'end'">
+
+            <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+            <button type="submit" style="margin-left: 8px;" mat-raised-button color="primary">Save</button>
+
+        </div>
+
     </form>
+
 </div>
-<div mat-dialog-action [align]="'end'">
-    <button mat-raised-button color="warn" mat-dialog-close>Close</button>
-    <button style="margin-left: 8px;" mat-raised-button color="primary" (click)="addIncident()">Save</button>
-</div>
+
