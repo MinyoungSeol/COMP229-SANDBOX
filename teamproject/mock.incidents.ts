@@ -1,4 +1,4 @@
-import { Incident } from "Incident";
+import { Incident } from "src/app/model/Incident";
 
 export const INCIDENTS: Incident[] = [
     {

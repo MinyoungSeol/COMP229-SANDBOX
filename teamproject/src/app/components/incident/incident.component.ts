@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Incident } from 'Incident';
+import { Incident } from 'src/app/model/Incident';
 import { INCIDENTS } from 'mock.incidents';
-import { IncidentsService } from 'src/app/services/incidents.service';
+import { IncidentsService } from 'src/app/services/api-incidents.service';
 
 @Component({
   selector: 'app-incident',
