@@ -1,41 +1,50 @@
-.loginBox{
+.loginBox {
     /* border:1px solid salmon; */
     width: 1000px;
-    padding:30px 0px 50px 0px;
+    padding: 30px 0px 50px 0px;
     text-align: center;
-    margin:auto
+    margin: auto
 }
 
 h1 {
     text-align: center;
-    margin-top:20px;
-    margin-bottom:50px;
+    margin-top: 20px;
+    margin-bottom: 50px;
     text-transform: uppercase;
 }
 
-label{
+label {
     display: inline-block;
-    margin-right:15px;
+    margin-right: 15px;
 }
 
 input {
-    height:30px;
-    border:none;
+    height: 30px;
+    width: 500px;
+    border: none;
     background-color: rgb(216, 216, 216);
-    padding-left:17px;
+    padding-left: 17px;
     border-radius: 10px;
+    display: inline-block;
 }
 
 button {
-    border:none;
+    border: none;
     padding: 10px 17px 10px 17px;
     border-radius: 20px;
-    cursor:pointer;
-    color:white;
+    cursor: pointer;
+    color: white;
 }
-.btn1{
+
+.btn1 {
     background-color: blue;
 }
-.btn2{
-    background-color:blueviolet;
+
+.btn2 {
+    background-color: blueviolet;
+}
+
+.col {
+    margin-top: 20px;
+
 }
