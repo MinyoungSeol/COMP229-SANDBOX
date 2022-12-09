@@ -1,4 +1,4 @@
-<div class="incident_item" *ngFor="let Incident of incidents">
+<div class="incident_item" *ngFor="let Incident of incidents" >
 
     <!-- Informaion divs -->
     <div class="infoDiv">
@@ -21,7 +21,7 @@
     <!-- button div -->
     <div class="buttonDiv">
         <button class="edit">Edit</button>
-        <button class="delete">Delete</button>
+        <button class="delete" (onDeleteIncident)="deleteIncident(incident)" (click)="deleteIncident(incident)">Delete</button>
     </div>
 
 </div>

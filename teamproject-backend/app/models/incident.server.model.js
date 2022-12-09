@@ -5,7 +5,7 @@ const IncidentSchema = new Schema
 (
     {
         caseNo:{
-            type: String,
+            type: Number,
             default: '',
             trim: true
         },
