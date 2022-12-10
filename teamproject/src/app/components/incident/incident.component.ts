@@ -27,17 +27,18 @@ export class IncidentComponent implements OnInit {
   }
 
   onDelete(incident: Incident){
-    this.onDeleteIncident.emit(incident)
+    
   }
 
-  deleteIncident(incident: Incident){
-    this.incidentsService.deleteIncident(incident).subscribe(() =>{
-      this.incidents = this.incidents.filter((i) => i.caseNo !== incident.caseNo)
-      console.log(`API call to /api/delete returned ${ this.incident }`)
-    }, (error) => {
-      console.log(`Error: ${ error }`)
-    })
-  }
+  // deleteIncident(incident: Incident){
+  //   this.onDeleteIncident.emit(incident)
+  //   this.incidentsService.deleteIncident(incident).subscribe(() =>{
+  //     this.incidents = this.incidents.filter((i) => i.caseNo !== incident.caseNo)
+  //     console.log(`API call to /api/delete returned ${ this.incidents }`)
+  //   }, (error) => {
+  //     console.log(`Error: ${ error }`)
+  //   })
+  // }
 
 
 

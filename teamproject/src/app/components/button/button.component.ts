@@ -19,6 +19,8 @@ export class ButtonComponent implements OnInit {
   @Output() btnClick = new EventEmitter()
   @Output() onAddIncident: EventEmitter<Incident> = new EventEmitter()
   @Input() incident!:Incident
+  @Output() onDeleteIncident: EventEmitter<Incident> = new EventEmitter()
+
   // @Output() onAddIncident: EventEmitter<Incident> = new EventEmitter()
 
   // caseNo: number = 0
@@ -41,7 +43,8 @@ export class ButtonComponent implements OnInit {
 
   openDialog() {
     this.dialog.open(DialogComponent, {
-      width: '40%'
+      width: '40%', minWidth: '500px'
+      
     });
   }
 
@@ -80,6 +83,10 @@ export class ButtonComponent implements OnInit {
   //   this.updated = ''
   //   this.status = ''  
   // }
+
+  onDelete(incident: Incident){
+    this.onDeleteIncident.emit(incident)
+  }
 
 }
 

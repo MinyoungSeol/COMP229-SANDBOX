@@ -28,7 +28,14 @@ import { LoginComponent } from './admin/login/login.component';
 import { RegisterComponent } from './admin/register/register.component';
 import { DialogComponent } from './components/dialog/dialog.component';
 
-import { DatePipe } from '@angular/common'
+import { DatePipe } from '@angular/common';
+
+import { IncidentTableComponent } from './components/incident-table/incident-table.component'
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatIconModule } from '@angular/material/icon';
+
 
 
 @NgModule({
@@ -43,7 +50,8 @@ import { DatePipe } from '@angular/common'
     AuthComponent,
     LoginComponent,
     RegisterComponent,
-    DialogComponent
+    DialogComponent,
+    IncidentTableComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +67,11 @@ import { DatePipe } from '@angular/common'
     MatInputModule,
     MatSelectModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatIconModule
   ],
   providers: [
     DatePipe

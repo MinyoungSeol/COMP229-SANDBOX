@@ -42,8 +42,11 @@ export class IncidentsService {
   //   return addIncidentUrl
   // }
 
-  deleteIncident(incident: Incident): Observable<Incident> {
-    let deleteUrl = this.http.delete<Incident>(`${ this.url }/delete/${ incident.caseNo }`)
-    return deleteUrl
+  deleteIncident(caseNo: number){
+    return this.http.delete<any>(`${this.url}/delete`+caseNo)
+  }
+
+  updateIncident(data:Incident, caseNo:number){
+    return this.http.put<any>(`${this.url}/`+caseNo, data)
   }
 }

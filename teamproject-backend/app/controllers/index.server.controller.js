@@ -72,3 +72,32 @@ exports.deleteIncident = (req, res) => {
     }
 
 }
+
+exports.updateIncident = (req, res) => {
+
+    try{
+        const caseNo = req.params.caseNo
+        const incident = new Incident({
+            caseNo: req.body.caseNo,
+            category: req.body.category,
+            created: req.body.created,
+            updated: req.body.updated,
+            status: req.body.status
+        })
+
+        Incident.findByIdAndUpdate({caseNo: caseNo}, {$set: {incident: incident}}, (err, incident) => {
+            if (err) {
+                console.log('error updating')
+                res.json(err)
+                return next(err)
+            } else {
+                console.log('Rendered from updateReminder');
+                return res.json(`Sucessfully updated ${ task.text }`)
+            }
+        })
+    } catch (error) {
+        res.json(error)
+        next(error)
+    }
+
+}

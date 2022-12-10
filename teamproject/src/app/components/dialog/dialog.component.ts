@@ -1,11 +1,11 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, Inject } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { IncidentsService } from 'src/app/services/api-incidents.service';
 import { Incident } from 'src/app/model/Incident';
 import { outputAst } from '@angular/compiler';
 import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/testing';
 import { DatePipe } from '@angular/common'
-import { MatDialogRef } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-dialog',
@@ -25,8 +25,13 @@ export class DialogComponent implements OnInit {
 
   incidents: Incident[] = []
   incidentForm!: FormGroup;
+  actionBtn: string = "Save"
 
-  constructor(private formBuilder: FormBuilder, private api: IncidentsService, private datePipe: DatePipe, private dialogRef: MatDialogRef<DialogComponent>) { }
+  constructor(private formBuilder: FormBuilder, 
+              private api: IncidentsService, 
+              private datePipe: DatePipe,
+              @Inject(MAT_DIALOG_DATA) public editData : any,
+              private dialogRef: MatDialogRef<DialogComponent>) { }
 
   ngOnInit(): void {
 
@@ -39,6 +44,47 @@ export class DialogComponent implements OnInit {
       created: ['', Validators.required],
       updated: ['', Validators.requiredTrue],
       status: ['', Validators.required]
+    });
+
+    // console.log(this.editData);
+
+    if(this.editData){
+      this.actionBtn = "Update"
+      this.incidentForm.controls['caseNo'].setValue(this.editData.caseNo);
+      this.incidentForm.controls['category'].setValue(this.editData.category);
+      this.incidentForm.controls['created'].setValue(this.editData.created);
+      this.incidentForm.controls['updated'].setValue(this.editData.updated);
+      this.incidentForm.controls['status'].setValue(this.editData.status);
+    }
+    
+  }
+
+  addIncident2(){
+
+      if(!this.editData){
+        this.api.postIncident(this.incidentForm.value)
+      .subscribe({
+        next:(res) =>{
+          alert("Incident record added successfully!")
+          this.incidentForm.reset();
+          this.dialogRef.close('save');
+        }
+      })
+      } else{
+        this.updateIncident()
+      }
+  }
+  updateIncident(){
+    this.api.updateIncident(this.incidentForm.value, this.editData.caseNo)
+    .subscribe({
+      next:(res)=>{
+        alert("Record Updated Successfully!");
+        this.incidentForm.reset();
+        this.dialogRef.close('update');
+      },
+      error:()=>{
+        alert("Error while updating the record");
+      }
     })
   }
 
@@ -54,6 +100,16 @@ export class DialogComponent implements OnInit {
     // this.status = ''  
   }
 
+  // makeId(length: number): string {
+  //   var result=''
+  //   var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  //   var charsLength = chars.length;
+  //   for (var i = 0; i < length; i++) {
+  //     result += chars.charAt(Math.floor(Math.random() * charsLength));
+  //   }
+  //   return result;
+  // }
+
   addIncident(incident: Incident) {
 
     //   incident = {
@@ -65,6 +121,7 @@ export class DialogComponent implements OnInit {
     // }
 
     incident = this.incidentForm.value;
+    
 
     //this.datePipe.transform(this.incident.created,"dd-MM-yyyy");
 
