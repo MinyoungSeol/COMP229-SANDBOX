@@ -42,7 +42,7 @@ export class DialogComponent implements OnInit {
       caseNo: ['', Validators.required],
       category: ['', Validators.required],
       created: ['', Validators.required],
-      updated: ['', Validators.requiredTrue],
+      updated: ['', Validators.required],
       status: ['', Validators.required]
     });
 
