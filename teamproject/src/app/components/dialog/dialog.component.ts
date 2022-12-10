@@ -68,6 +68,7 @@ export class DialogComponent implements OnInit {
           alert("Incident record added successfully!")
           this.incidentForm.reset();
           this.dialogRef.close('save');
+          window.location.reload();
         }
       })
       } else{
