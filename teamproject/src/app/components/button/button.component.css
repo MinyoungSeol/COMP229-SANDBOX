@@ -14,4 +14,9 @@
     border-radius: 40px;
     display: block;
     margin: auto;
+    transition: transform 300ms ease-in;
+}
+
+.hero__btn:hover{
+    transform: scale(1.1);
 }

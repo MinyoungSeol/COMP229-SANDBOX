@@ -42,10 +42,10 @@
     <ng-container matColumnDef="action">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
         <td mat-cell *matCellDef="let row">
-            <button mat-icon-button (click)="editIncident(row)" color="primary">
+            <button mat-icon-button (click)="editIncident(row)" color="primary" class="edit__btn">
                 <mat-icon>edit</mat-icon>
             </button>
-            <button mat-icon-button (click)="deleteIncident(row.caseNo)" color="warn">
+            <button mat-icon-button (click)="deleteIncident(row.caseNo)" color="warn" class="delete__btn">
                 <mat-icon>delete</mat-icon>
             </button>
         </td>
