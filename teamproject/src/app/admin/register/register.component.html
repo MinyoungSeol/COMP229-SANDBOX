@@ -1,19 +1,41 @@
 <div class="registerBox">
-    <form class="form-signin">
+    <form [formGroup]="registerForm" class="form-signin">
         <h1 class="h3 mb-3 font-weight-normal">Welcome</h1>
 
         <label for="username" class="sr-only">Username</label>
-        <input type="text" name="username" id="username" [(ngModel)]="username" class="form-control" placeholder="Username" required autofocus>
+        <input type="text" name="username" id="username" formControlName="username" [(ngModel)]="username"
+            class="form-control" placeholder="Username" required autofocus>
+        <div class="form-text text-danger" *ngIf="UserName.errors?.['required'] && UserName.touched">User Name is
+            Required</div>
         <br><br>
         <label for="password" class="sr-only">Password</label>
-        <input type="password" name="password" id="password" [(ngModel)]="password" class="form-control" placeholder="Password" required>
+        <input type="password" name="password" id="password" formControlName="password" [(ngModel)]="password"
+            class="form-control" placeholder="Password" required>
+        <div class="form-text text-danger" *ngIf="Password.errors?.['required'] && Password.touched">Password
+            is
+            Required</div>
         <br><br>
-        <label for="email" class="sr-only">Email</label>
-        <input type="email" name="email" id="email" [(ngModel)]="email" class="form-control" placeholder="Email" required>
+        <label for="email" class="sr-only">Email Address</label>
+        <input type="email" name="email" id="email" formControlName="email" [(ngModel)]="email" class="form-control"
+            placeholder="Email" required>
+        <div class="form-text text-danger" *ngIf="Email.errors?.['required'] && (Email.dirty || Email.touched)">Email is
+            Required</div>
+        <div class="form-text text-danger" *ngIf="Email.errors?.['email'] && (Email.dirty || Email.touched)">Email is
+            Invalid</div>
         <br><br>
         <label for="displayName" class="sr-only">Display Name</label>
-        <input type="text" name="displayName" id="displayName" [(ngModel)]="displayName" class="form-control" placeholder="Display Name" required>
+        <input type="text" name="displayName" id="displayName" formControlName="displayname" [(ngModel)]="displayName"
+            class="form-control" placeholder="Display Name" required>
+        <div class="form-text text-danger" *ngIf="DisplayName.errors?.['required'] && DisplayName.touched">Display Name
+            is
+            Required</div>
         <br><br><br>
-        <button class="btn btn-lg btn-primary btn-block" (click)="register()" type="button">Register</button>
+        <button class="btn btn-lg btn-primary btn-block" type="button" (click)="registerSubmited()"
+            routerLink="/login">Register</button>
+        <div class="row">
+            <div class="col">
+                <span>Already have Account? </span><a routerLink="/login">Login</a>
+            </div>
+        </div>
     </form>
 </div>
