@@ -92,7 +92,7 @@ exports.updateIncident = (req, res) => {
                 return next(err)
             } else {
                 console.log('Rendered from updateReminder');
-                return res.json(`Sucessfully updated ${ task.text }`)
+                return res.json(`Sucessfully updated ${ incident.caseNo }`)
             }
         })
     } catch (error) {

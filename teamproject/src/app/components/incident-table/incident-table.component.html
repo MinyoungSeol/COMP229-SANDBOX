@@ -45,7 +45,7 @@
             <button mat-icon-button (click)="editIncident(row)" color="primary">
                 <mat-icon>edit</mat-icon>
             </button>
-            <button mat-icon-button color="warn">
+            <button mat-icon-button (click)="deleteIncident(row.caseNo)" color="warn">
                 <mat-icon>delete</mat-icon>
             </button>
         </td>

@@ -43,10 +43,10 @@ export class IncidentsService {
   // }
 
   deleteIncident(caseNo: number){
-    return this.http.delete<any>(`${this.url}/delete`+caseNo)
+    return this.http.delete<any>(`${this.url}/delete/`+caseNo)
   }
 
-  updateIncident(data:Incident, caseNo:number){
+  updateIncident(data:any, caseNo:number){
     return this.http.put<any>(`${this.url}/`+caseNo, data)
   }
 }

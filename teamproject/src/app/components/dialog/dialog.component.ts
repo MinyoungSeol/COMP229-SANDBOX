@@ -59,6 +59,8 @@ export class DialogComponent implements OnInit {
     
   }
 
+  
+
   addIncident2(){
 
       if(!this.editData){
@@ -68,6 +70,7 @@ export class DialogComponent implements OnInit {
           alert("Incident record added successfully!")
           this.incidentForm.reset();
           this.dialogRef.close('save');
+          window.location.reload();
         }
       })
       } else{
