@@ -1,5 +1,5 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Incident } from 'src/app/model/Incident';
+import { Component, OnInit } from '@angular/core';
+import { Incident } from 'Incident';
 import { INCIDENTS } from 'mock.incidents';
 import { IncidentsService } from 'src/app/services/api-incidents.service';
 

@@ -49,6 +49,19 @@ export class IncidentTableComponent implements OnInit {
     })
   }
 
+  deleteIncident(caseNo: number){
+    this.api.deleteIncident(caseNo)
+    .subscribe({
+      next:(res)=>{
+        alert("Record Deleted Successfully!")
+        this.getAllIncidents();
+      },
+      error:()=>{
+        alert("Error while deleting")
+      }
+    })
+  }
+
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
