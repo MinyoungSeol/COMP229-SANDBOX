@@ -1,0 +1,31 @@
+<div class="loginBox">
+    <form [formGroup]="loginForm" class="form-signin">
+        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+        <label for="username" class="sr-only">Username</label>
+        <input type="text" name="username" id="username" formControlName="username" [(ngModel)]="username"
+            class="form-control" placeholder="Username" required autofocus>
+        <div class="form-text text-danger" *ngIf="UserName.errors?.['required'] && UserName.touched">User Name is
+            Required</div>
+
+        <br><br>
+        <label for="password" class="sr-only">Password</label>
+        <input type="password" name="password" id="password" formControlName="password" [(ngModel)]="password"
+            class="form-control" placeholder="Password" required>
+        <div class="form-text text-danger" *ngIf="Password.errors?.['required'] && Password.touched">Password
+            is
+            Required</div>
+        <div class="checkbox mb-3">
+            <!-- <label>
+            <input type="checkbox" value="remember-me"> Remember me
+        </label> -->
+        </div>
+
+        <br><br><br>
+        <button class="btn1 btn btn-lg btn-primary btn-block" (click)="login()" type="submit">Login</button>
+        <div class="row">
+            <div class="col">
+                <span>Don't have Account? </span><a routerLink="/register">Register</a>
+            </div>
+        </div>
+    </form>
+</div>

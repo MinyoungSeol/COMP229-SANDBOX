@@ -1,0 +1,9 @@
+.spacer {
+    flex: 1 1 auto;
+}
+
+.logo {
+    padding: 10px;
+    width: 130px;
+    height: 130px;
+}

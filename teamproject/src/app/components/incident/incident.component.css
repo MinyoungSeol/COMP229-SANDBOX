@@ -1,0 +1,61 @@
+.incident_item{
+    width:95%;
+    padding-left:20px;
+    padding-right:20px;
+    padding-top: 25px;
+    padding-bottom:25px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #ECF1F8;
+    box-shadow: 3px 3px 3px #989898;
+    margin-bottom:20px;
+}
+.infoDiv{
+    /* border:1px solid pink; */
+    width:80%;
+    cursor:default;
+}
+.up {
+    /* border:1px solid tomato; */
+    width:100%;
+    font-weight: bold;
+}
+.down{
+    /* border:1px solid teal; */
+    margin-top:15px;
+    width:100%;
+}
+.infoDiv > div > span{
+    width:19.5%;
+    /* border:1px solid black; */
+    display:inline-block;
+}
+.infoDiv > div > span:first-child{
+    text-align: left;
+}
+
+.buttonDiv{
+    /* border:1px solid purple; */
+    width:15%;
+    display: flex;
+    vertical-align: middle;
+    padding:0;
+}
+.buttonDiv > button{
+    width:45%;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 20px;
+    display: inline-block;
+    margin: auto;
+}
+.edit{
+    color: white;
+    background-color: #84B027;
+}
+
+.delete{
+    color: white;
+    background-color: #DB2222;
+}
