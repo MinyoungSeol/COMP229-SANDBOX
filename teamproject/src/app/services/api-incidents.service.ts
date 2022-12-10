@@ -46,7 +46,7 @@ export class IncidentsService {
     return this.http.delete<any>(`${this.url}/delete/`+caseNo)
   }
 
-  updateIncident(data:any, caseNo:number){
-    return this.http.put<any>(`${this.url}/`+caseNo, data)
+  updateIncident(incident:Incident, caseNo:number){
+    return this.http.put<Incident>(`${this.url}/update/`+caseNo, incident)
   }
 }

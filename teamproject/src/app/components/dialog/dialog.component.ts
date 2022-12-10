@@ -42,7 +42,7 @@ export class DialogComponent implements OnInit {
       caseNo: ['', Validators.required],
       category: ['', Validators.required],
       created: ['', Validators.required],
-      updated: ['', Validators.requiredTrue],
+      updated: ['', Validators.required],
       status: ['', Validators.required]
     });
 
@@ -78,17 +78,18 @@ export class DialogComponent implements OnInit {
       }
   }
   updateIncident(){
-    this.api.updateIncident(this.incidentForm.value, this.editData.caseNo)
-    .subscribe({
-      next:(res)=>{
-        alert("Record Updated Successfully!");
-        this.incidentForm.reset();
+    // this.api.updateIncident(this.incidentForm.value, this.editData.caseNo)
+    // .subscribe({
+    //   next:(res)=>{
+    //     alert("Record Updated Successfully!");
+    //     this.incidentForm.reset();
+        alert("Error while updating the record")
         this.dialogRef.close('update');
-      },
-      error:()=>{
-        alert("Error while updating the record");
-      }
-    })
+    //   },
+    //   error:()=>{
+    //     alert("Error while updating the record");
+    //   }
+    // })
   }
 
   onSubmit(){
